@@ -1,17 +1,11 @@
 import './App.css';
-import { getStorage, ref, getDownloadURL } from "firebase/storage";
-import { useEffect, useState} from "react"
+import AboutMe from './app/components/about-me/about-me';
 
 function App() {
-  const [url, setUrl] = useState()
-  const storage = getStorage()
-  const imageRef = ref(storage, 'github-profile.jpg')
-  useEffect(()=>{
-    getDownloadURL(imageRef).then(url => setUrl(url))
-  },[])
-  return (
-    <img src={url}></img>
-  );
+  
+  return <>
+    <AboutMe/>
+  </>
 }
 
 export default App;
