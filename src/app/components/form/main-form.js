@@ -1,8 +1,8 @@
-import { Form, InputGroup, FormControl, Button, Row, Col } from "react-bootstrap";
+import { Form, InputGroup, FormControl, Button} from "react-bootstrap";
 
 export default function MainForm(){
     return (
-        <Form className="border">
+        <Form className="border" id="main-form">
             <h2 className="m-3">Interested?</h2>
             <p className="m-3">Want more information? Let me know below :)</p>
             <Form.Group className="m-3">
