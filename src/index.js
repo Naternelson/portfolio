@@ -3,14 +3,36 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import fireConfig from "./firebase-config"
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { createTheme, ThemeProvider } from '@mui/material';
+// import fireConfig from "./firebase-config"
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#264653',
+    },
+    secondary: {
+      main: '#e9c46a',
+    },
+    warning: {
+      main: '#f4a261',
+    },
+    error: {
+      main: '#E76F51',
+    },
+    info: {
+      main: '#2a9d8f',
+    },
+  }
+})
 
-fireConfig()
+// fireConfig()
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
