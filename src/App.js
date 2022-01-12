@@ -1,21 +1,27 @@
-import { Box, Card, Paper, Typography } from '@mui/material';
+import { Box, Card, Grid, Input, Link, Paper, TextField, Typography } from '@mui/material';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
-import './App.css';
+import SocialLink from './components/social-links';
+import Form from './utilities/form';
 import Perspective from './utilities/perspective';
-import PerspectiveLayer from './utilities/perspective-layer';
 
 
 function App() {
 
-  return <Perspective pages={2}>
-    <ParallaxLayer offset={0} speed={0} style={{ backgroundColor: 'blue' }} />
-    <ParallaxLayer offset={1} speed={0} style={{ backgroundColor: '#ff6d6d' }} />
-    <PerspectiveLayer speed={1} offset={.5} style={{display: 'flex', justifyContent: 'center', color: 'white'}}>
-        <Typography elevation={3} p={5} variant={"p"}>Hi There</Typography>
-    </PerspectiveLayer>
-    <PerspectiveLayer transparency={"true"} speed={10} offset={.75} style={{display: 'flex', justifyContent: 'center', color: 'white'}}>
-      <Typography elevation={3} p={5} variant={"h1"}>Hi Mom</Typography>
-    </PerspectiveLayer>
+  return <Perspective pages={3} style={{overflowY: 'auto'}}>
+    <ParallaxLayer speed={0}>
+      <Box display="flex" bgcolor="primary.main" py={2} px={5} component="nav" alignItems={"center"} justifyContent={"space-between"}>
+        <Typography fontSize={"2rem"} color="#fff" variant='h1'>
+          <Link href="" rel={"tag"} underline={"none"} color={"inherit"} variant={"inherit"}>Nate Nelson</Link>
+        </Typography>
+        <Box display="flex" justifyContent={"space-between"}>
+          <Typography color={"white"} variant='body1'>
+            <SocialLink name={"LinkedIn Link"}href={"https://www.linkedin.com/in/naternelson/"}>LinkedIn</SocialLink>
+          </Typography>
+          
+         
+        </Box>
+      </Box>
+    </ParallaxLayer>
   </Perspective>
 }
 
